@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - Page Palette</title>
+  <link rel="stylesheet" href="..//css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script type="module" src="..//js/admin.js"></script>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <nav class="hero-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="hero-logo" aria-label="Page Palette Home">
+          <img src="../assets/logo.png" alt="Page Palette Logo">
+        </a>
+        <ul class="hero-nav-links" id="main-nav">
+          <li><a href="#" id="logout-link" class="hide">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="admin-main">
+      <section class="admin-welcome-section">
+        <h1>Admin Dashboard</h1>
+        <p class="welcome-msg">Welcome, <span id="admin-user-email">admin</span>!</p>
+      </section>
+
+      <section class="admin-tabs">
+        <button class="admin-tab-btn active" id="books-tab-btn" type="button">Books</button>
+        <button class="admin-tab-btn" id="orders-tab-btn" type="button">Orders</button>
+        <button class="admin-tab-btn" id="feedbacks-tab-btn" type="button">Feedbacks</button>
+      </section>
+
+      <section class="admin-section admin-books-section active" id="books-section">
+        <div class="admin-panel">
+          <h2 class="section-title">Manage Books</h2>
+          <form id="book-form" class="admin-book-form">
+            <input type="hidden" id="book-id" />
+            <div class="form-row">
+              <label for="book-title">Title</label>
+              <input type="text" id="book-title" required placeholder="Book Title">
+            </div>
+            <div class="form-row">
+              <label for="book-author">Author</label>
+              <input type="text" id="book-author" required placeholder="Book Author">
+            </div>
+            <div class="form-row">
+              <label for="book-category">Category</label>
+              <select id="book-category" required>
+                <option value="">Select category</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Children">Children</option>
+                <option value="Academic">Academic</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Romance">Romance</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Manga">Manga</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="book-stock">Stock</label>
+              <input type="number" id="book-stock" min="0" required placeholder="Stock quantity">
+            </div>
+            <div class="form-row">
+              <label for="book-price">Price</label>
+              <input type="number" id="book-price" min="0" step="0.01" required placeholder="Price">
+            </div>
+            <div class="form-row">
+              <label for="book-image">Image URL</label>
+              <input type="url" id="book-image" required placeholder="Image URL">
+            </div>
+            <div class="form-row">
+              <label for="book-description">Description</label>
+              <textarea id="book-description" rows="2" required placeholder="Book Description"></textarea>
+            </div>
+            <div class="form-btn-row">
+              <button type="submit" class="admin-btn" id="book-save-btn">Add Book</button>
+              <button type="button" class="admin-btn secondary" id="book-cancel-btn" style="display:none;">Cancel</button>
+            </div>
+            <div class="admin-error" id="book-form-error"></div>
+          </form>
+        </div>
+        <div class="admin-panel">
+          <h3 class="section-subtitle">Book List</h3>
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="books-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Category</th>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>Image</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="books-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section admin-orders-section" id="orders-section">
+        <div class="admin-panel">
+          <h2 class="section-title">Order List</h2>
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="orders-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Address</th>
+                  <th>Created At</th>
+                  <th>Book(s)</th>
+                  <th>Shipping (₱)</th>
+                  <th>Subtotal (₱)</th>
+                  <th>Total (₱)</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="orders-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section admin-feedbacks-section" id="feedbacks-section">
+        <div class="admin-panel">
+          <h2 class="section-title">User Feedbacks</h2>
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="feedbacks-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Feedback / Message</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="feedbacks-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-content" aria-label="Footer">
+        <p>&copy; 2025 Page Palette. All rights reserved.</p>
+      </section>
+    </footer>
+  </div>
+</body>
+</html>
