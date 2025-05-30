@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Register - Page Palette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/cart.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <nav class="hero-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="hero-logo" aria-label="Page Palette Home">
+          <img src="../assets/logo.png" alt="Page Palette Logo">
+        </a>
+        <button class="hamburger-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="hero-nav-links" id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html" class="active" aria-current="page">Login/Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="login-section">
+        <div class="container login-form-container">
+          <div class="login-card-pop">
+            <div class="login-register-toggle">
+              <button id="login-tab-btn" class="toggle-btn active" type="button">Log In</button>
+              <button id="register-tab-btn" class="toggle-btn" type="button">Register</button>
+              <div class="toggle-bg"></div>
+            </div>
+            <form id="login-form" class="login-form active" autocomplete="off">
+              <div class="form-group">
+                <label for="login-username">Email</label>
+                <input type="text" id="login-username" required placeholder="Enter Email" autocomplete="username email"/>
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <div class="password-input-wrapper">
+                  <input type="password" id="login-password" required placeholder="Enter Password" autocomplete="current-password"/>
+                  <button type="button" class="show-password-btn" id="show-login-password" tabindex="-1" aria-label="Show password"></button>
+                </div>
+              </div>
+              <div class="form-row remember-row">
+                <input type="checkbox" id="remember-login" />
+                <label for="remember-login">Remember Password</label>
+              </div>
+              <div style="margin-top:0.5em;text-align:right;">
+                <a href="#" id="forgot-password-link" class="forgot-link">Forgot password?</a>
+              </div>
+              <button type="submit" class="form-btn">Log in</button>
+              <div class="login-error" id="login-error"></div>
+            </form>
+            <div class="social-row" style="margin-top:0;">
+              <button class="social-btn g-btn" id="google-login-btn" title="Login with Google">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" alt="Google">
+                <span class="google-btn-text">Login with Google</span>
+              </button>
+            </div>
+            <form id="register-form" class="login-form" autocomplete="off" style="display:none;">
+              <div class="form-group">
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" required placeholder="Username" autocomplete="username"/>
+              </div>
+              <div class="form-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" required placeholder="Email" autocomplete="email"/>
+              </div>
+              <div class="form-group">
+                <label for="register-password">Password</label>
+                <div class="password-input-wrapper">
+                  <input type="password" id="register-password" required placeholder="Enter Password" autocomplete="new-password"/>
+                  <button type="button" class="show-password-btn" id="show-register-password" tabindex="-1" aria-label="Show password"></button>
+                </div>
+              </div>
+              <button type="submit" class="form-btn">Register</button>
+              <div class="login-error" id="register-error"></div>
+            </form>
+            <form id="forgot-form" class="login-form" autocomplete="off" style="display:none;">
+              <div class="form-group">
+                <label for="forgot-email">Enter your email to reset password</label>
+                <input type="email" id="forgot-email" required placeholder="Email" autocomplete="email"/>
+              </div>
+              <button type="submit" class="form-btn">Send Reset Email</button>
+              <div class="login-error" id="forgot-error"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-content" aria-label="Footer">
+        <p>&copy; 2025 Page Palette. All rights reserved.</p>
+      </section>
+    </footer>
+  </div>
+  <script type="module" src="../js/login.js"></script>
+</body>
+</html>
