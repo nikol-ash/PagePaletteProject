@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Palette - Book Shop</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <nav class="hero-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="hero-logo" aria-label="Page Palette Home">
+          <img src="../assets/logo.png" alt="Page Palette Logo">
+        </a>
+        <button class="hamburger-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="hero-nav-links" id="main-nav">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">Cart(<span id="cart-count">0</span>)</a></li>
+          <li id="user-info-li" class="hide">
+            <span id="user-display" class="user-display"></span>
+          </li>
+          <li><a href="login.html" id="login-link">Login/Register</a></li>
+          <li><a href="#" id="logout-link" class="hide">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-content" aria-label="Homepage Hero Section">
+        <article class="hero-left">
+          <h1>Find and share books you love!</h1>
+          <p>
+            From bestsellers to hidden gems, our shop offers a wide range of books for every reader.
+            Discover, collect, and enjoy your next great read with us.
+          </p>
+          <form class="isbn-search" autocomplete="off" onsubmit="return false;" aria-label="Search">
+            <input type="text" placeholder="Search for Book Title" id="isbn-input" aria-label="Search Book" />
+            <button type="submit" id="isbn-search-btn">Search</button>
+          </form>
+        </article>
+        <article class="hero-right" aria-label="Featured Books Carousel">
+          <div class="book-carousel">
+            <div class="book-stack" id="book-stack">
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="book-categories-section" style="background:#fff;">
+        <div class="container">
+          <h2 class="section-title">Explore by Category</h2>
+          <div class="categories-grid">
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1498019559366-a1cbd07b5160?q=80&w=1158&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fiction Books">
+              <div class="category-hover">
+                <span class="category-label">Fiction</span>
+                <a href="#" class="category-btn" data-category="Fiction">Browse Fiction</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1658842042779-dc9ab3125690?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Non-Fiction Books">
+              <div class="category-hover">
+                <span class="category-label">Non-Fiction</span>
+                <a href="#" class="category-btn" data-category="Non-Fiction">Browse Non-Fiction</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1533561304446-88a43deb6229?q=80&w=1289&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Children's Books">
+              <div class="category-hover">
+                <span class="category-label">Children</span>
+                <a href="#" class="category-btn" data-category="Children">Browse Children</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1537495329792-41ae41ad3bf0?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Academic Books">
+              <div class="category-hover">
+                <span class="category-label">Academic</span>
+                <a href="#" class="category-btn" data-category="Academic">Browse Academic</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://plus.unsplash.com/premium_photo-1682124752476-40db22034a58?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Science Fiction Books">
+              <div class="category-hover">
+                <span class="category-label">Science Fiction</span>
+                <a href="#" class="category-btn" data-category="Sci-Fi">Browse Sci-Fi</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=" Romance Books">
+              <div class="category-hover">
+                <span class="category-label">Romance</span>
+                <a href="#" class="category-btn" data-category="Romance">Browse Romance</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1284&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fantasy Books">
+              <div class="category-hover">
+                <span class="category-label">Fantasy</span>
+                <a href="#" class="category-btn" data-category="Fantasy">Browse Fantasy</a>
+              </div>
+            </div>
+            <div class="category-card">
+              <img src="https://images.unsplash.com/photo-1531501410720-c8d437636169?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Comics & Manga">
+              <div class="category-hover">
+                <span class="category-label">Manga</span>
+                <a href="#" class="category-btn" data-category="Manga">Browse Manga</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="customer-feedback-section" style="background:#fff5f8;">
+        <div class="container">
+          <h2 class="section-title">What Our Readers Say</h2>
+          <div class="feedback-grid">
+            <div class="feedback-card">
+              <p class="feedback-text">“Fantastic selection and lightning-fast delivery. I always discover something new!”</p>
+              <div class="feedback-user">
+                <img src="https://cdn.manilastandard.net/wp-content/uploads/2025/04/IMG_9048-1024x704.jpeg" alt="Katrhyn B.">
+                <span>Kathryn B.</span>
+              </div>
+            </div>
+            <div class="feedback-card">
+              <p class="feedback-text">“Page Palette is my favorite! The curated categories and personal recommendations are spot on.”</p>
+              <div class="feedback-user">
+                <img src="https://contents.pep.ph/images2/images2/2024/05/08/nadine-lustre-mainimage-1715164610.jpg" alt="Nadine L.">
+                <span>Nadine L.</span>
+              </div>
+            </div>
+            <div class="feedback-card">
+              <p class="feedback-text">“A beautifully designed store with warm customer service. I’ve found gems I never knew I wanted.”</p>
+              <div class="feedback-user">
+                <img src="https://assets-starmagic.abs-cbn.com/wp-content/uploads/2022/03/26102639/JANELLA-2.jpg" alt="Janella S.">
+                <span>Janella S.</span>
+              </div>
+            </div>
+            <div class="feedback-card">
+              <p class="feedback-text">“The best book gifts for friends! The children’s section is magical.”</p>
+              <div class="feedback-user">
+                <img src="https://ntvb.tmsimg.com/assets/assets/707310_v9_aa.jpg?w=360&h=480" alt="Priya N.">
+                <span>Liza S.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="homepage-details" style="background:#fff;">
+        <div class="container homepage-details-container">
+          <div class="details-column">
+            <h3>Free Shipping</h3>
+            <p>On all orders over ₱500. Your books delivered quickly and safely, right to your door.</p>
+          </div>
+          <div class="details-column">
+            <h3>Gift Wrapping</h3>
+            <p>Personalize your gift with beautiful wrapping and a custom message for your loved ones.</p>
+          </div>
+          <div class="details-column">
+            <h3>Community Events</h3>
+            <p>Join our monthly community events: author Q&As, book swaps, and workshops for all ages. Stay tuned for our next calendar!</p>
+          </div>
+          <div class="details-column">
+            <h3>Support Local</h3>
+            <p>We partner with local authors and independent publishers to bring you unique finds.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section class="footer-content" aria-label="Footer">
+        <p>&copy; 2025 Page Palette. All rights reserved.</p>
+      </section>
+    </footer>
+  </div>
+  <script type="module" src="../js/index.js"></script>
+</body>
+</html>
